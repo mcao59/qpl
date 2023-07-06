@@ -95,9 +95,12 @@ extern "C" qpl_status hw_descriptor_compress_init_deflate_base(qpl_job *qpl_job_
         bool is_hw_header_gen_supported = false;
 
 #if defined( __linux__ )
+/*
         static auto &dispatcher = qpl::ml::dispatcher::hw_dispatcher::get_instance();
         const auto &device = dispatcher.device(0);
         is_hw_header_gen_supported = device.get_header_gen_support();
+*/
+        is_hw_header_gen_supported = true;
 #endif //__linux__
 
         // TODO: enable Huffman only header gen
@@ -295,9 +298,12 @@ extern "C" void hw_descriptor_compress_init_deflate_dynamic(hw_iaa_analytics_des
     bool is_hw_header_gen_supported = false;
 
 #if defined( __linux__ )
+/*
     static auto &dispatcher = qpl::ml::dispatcher::hw_dispatcher::get_instance();
     const auto &device = dispatcher.device(0);
     is_hw_header_gen_supported = device.get_header_gen_support();
+*/
+    is_hw_header_gen_supported = true;
 #endif //__linux__
 
     // TODO: enable Huffman only header gen
